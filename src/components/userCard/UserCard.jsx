@@ -1,23 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {
-    Avatar,
-    Button,
-    CardBox,
-    MainImage,
-    UserInfo,
-    UserName,
-  } from './UserCard.styled';
+  Avatar,
+  Button,
+  CardBox,
+  MainImage,
+  UserInfo,
+  UserName,
+} from './UserCard.styled';
 import picture from '../images/picture.svg';
 import { ReactComponent as Logo } from '../images/goit-logo.svg';
 
-
-
-const UserCard = ({ avatar, user, followers, tweets, following }) => {
-//   console.log('avatar :>> ', avatar);
-//   console.log('followers :>> ', followers);
-//   console.log('user :>> ', user);
-//   console.log('tweets :>> ', tweets);
+const UserCard = ({ id, avatar, user, followers, tweets, following }) => {
+  //   console.log('avatar :>> ', avatar);
+  //   console.log('followers :>> ', followers);
+  //   console.log('user :>> ', user);
+  //   console.log('tweets :>> ', tweets);
 
   return (
     <CardBox>
@@ -49,14 +47,16 @@ const UserCard = ({ avatar, user, followers, tweets, following }) => {
       </Button>
       <UserName>{user}</UserName>
     </CardBox>
-  )
+  );
 };
 
 UserCard.propTypes = {
+  id: PropTypes.number.isRequired,
   avatar: PropTypes.string.isRequired,
   user: PropTypes.string.isRequired,
   followers: PropTypes.number.isRequired,
   tweets: PropTypes.number.isRequired,
+  following: PropTypes.bool.isRequired,
 };
 
 export default UserCard;

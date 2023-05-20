@@ -1,9 +1,9 @@
-import { Suspense } from "react";
-import { Outlet } from "react-router-dom";
-import Loader from "../../components/loader/Loader";
-import { ToastContainerEl } from "../../components/toast/ToastContainer";
+import { Suspense } from 'react';
+import { Outlet } from 'react-router-dom';
+import Loader from '../../components/loader/Loader';
+import { ToastContainerEl } from '../../components/toast/ToastContainer';
 // import { Header } from "../header/Header";
-import { Container } from "./Layout.styled";
+import { Container } from './Layout.styled';
 
 const Layout = () => {
   return (
