@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import {
   Avatar,
@@ -6,16 +6,25 @@ import {
   CardBox,
   MainImage,
   UserInfo,
-  UserName,
+//   UserName,
 } from './UserCard.styled';
 import picture from '../images/picture.svg';
 import { ReactComponent as Logo } from '../images/goit-logo.svg';
 
-const UserCard = ({ id, avatar, user, followers, tweets, following }) => {
+const UserCard = ({ id, avatar, followers, tweets, following }) => {
   //   console.log('avatar :>> ', avatar);
   //   console.log('followers :>> ', followers);
   //   console.log('user :>> ', user);
   //   console.log('tweets :>> ', tweets);
+  const [follower, setFollower] = useState(followers);
+  const [onFollowing, setOnFollowing] = useState(following);
+
+const onClick = e => {
+    if (e.target.id === id) {
+        setOnFollowing(prev => !prev);
+        onFollowing ? setFollower(prev => prev - 1) : setFollower(prev => prev + 1);
+    }
+  };
 
   return (
     <CardBox>
@@ -32,20 +41,15 @@ const UserCard = ({ id, avatar, user, followers, tweets, following }) => {
           <span>{tweets}</span> Tweets
         </p>
         <p>
-          <span>{new Intl.NumberFormat('en-US').format(followers)} </span>
+          <span>{new Intl.NumberFormat('en-US').format(follower)} </span>
           Followers
         </p>
       </UserInfo>
 
-      <Button
-        type="button"
-        // onClick={e => handleClick(e)}
-        following={following}
-        name={user}
-      >
-        {following ? 'Following' : 'Follow'}
+      <Button type="button" onClick={onClick} following={onFollowing} id={id}>
+        {onFollowing ? 'Following' : 'Follow'}
       </Button>
-      <UserName>{user}</UserName>
+      {/* <UserName>{user}</UserName> */}
     </CardBox>
   );
 };
