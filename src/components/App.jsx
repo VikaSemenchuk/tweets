@@ -1,4 +1,3 @@
-// import logo from '../logo.svg';
 import '../components/App.css';
 
 import { lazy } from 'react';

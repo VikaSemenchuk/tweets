@@ -1,13 +1,37 @@
 // import React from 'react'
-import BackBtn from '../backButton/BackBtn'
+import UserCard from 'components/userCard/UserCard';
+import { useEffect, useState } from 'react';
+import { toast } from 'react-toastify';
+import { APIUsers } from 'services/tweetsApi';
+import BackBtn from '../backButton/BackBtn';
+import { StyledUsersList } from './UsersList.styled';
 
 const UsersList = () => {
-  return (
-    <div>
-        <BackBtn />
-      UsersList
-    </div>
-  )
-}
+  const [users, setUsers] = useState([]);
 
-export default UsersList
+  useEffect(() => {
+    const getUsers = async () => {
+      try {
+        const users = await APIUsers();
+        setUsers(users);
+        console.log('users :>> ', users);
+      } catch (error) {
+        toast.error(`Oops, some error occurred... Message: ${error.message}`);
+      }
+    };
+    getUsers();
+  }, []);
+  APIUsers();
+  return (
+    <>
+      <BackBtn />
+      <StyledUsersList>
+        {users.map(user => {
+          return <UserCard key={user.id} {...user} />;
+        })}
+      </StyledUsersList>
+    </>
+  );
+};
+
+export default UsersList;
