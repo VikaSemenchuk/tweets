@@ -1,6 +1,6 @@
 // import React from 'react'
 import { StyledLinkBtn } from 'components/backButton/BackLink.styled';
-import { Link, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import { Hero, MainPage } from './HomePage.styled';
 
 const HomePage = () => {
