@@ -1,14 +1,14 @@
 // import React from 'react'
 // import { useLayoutEffect } from 'react'
 import { useLocation } from 'react-router-dom'
-import { StyledBackBtn } from './BackBtn.styled'
+import { StyledLinkBtn } from './BackLink.styled'
 
 const BackBtn = () => {
     const location = useLocation()
   return (
-    <StyledBackBtn to={location.state?.from ?? '/'}>
-      Back
-    </StyledBackBtn>
+    <StyledLinkBtn to={location.state?.from ?? '/'}>
+      go back to home page
+    </StyledLinkBtn>
   )
 }
 
