@@ -6,14 +6,10 @@ async (_, thunkApi) =>{
     try {
        const users = await getUsersAPI();
        return users;
-        // return usersAPI
-        // dispatch(setUsers(usersAPI));
-        // console.log('users :>> ', usersAPI);
-        // // console.log('users :>> ', users);
+
       } catch (error) {
         return thunkApi.rejectWithValue(error.message);
       }
-    // };
 })
 
 export const updateUser = createAsyncThunk(
@@ -22,6 +18,7 @@ export const updateUser = createAsyncThunk(
       try {
         const response = await putUserAPI(newUserInfo);
         return response;
+
       } catch (error) {
         return thunkAPI.rejectWithValue(error.message);
       }

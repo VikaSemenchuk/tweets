@@ -1,9 +1,10 @@
-import { Footer } from 'layout/footer/Footer';
 import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
-import Loader from '../../components/loader/Loader';
+
 import { ToastContainerEl } from '../../components/toast/ToastContainer';
-// import { Header } from "../header/Header";
+import Loader from '../../components/loader/Loader';
+import { Footer } from 'layout/footer/Footer';
+
 import { Container } from './Layout.styled';
 
 const Layout = () => {

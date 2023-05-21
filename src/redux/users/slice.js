@@ -11,11 +11,13 @@ const initialState = {
 const usersSlice = createSlice({
   name: 'users',
   initialState,
+
   reducers: {
     setPage: (state, action) => {
       state.currentPage = action.payload;
     },
   },
+
   extraReducers: builder =>
     builder
       .addCase(getUsers.pending, onPending)
@@ -39,6 +41,7 @@ const usersSlice = createSlice({
       })
       .addCase(updateUser.rejected, onRejected),
 });
+
 function onPending(state) {
   state.isLoading = true;
   state.error = null;

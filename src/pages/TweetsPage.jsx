@@ -1,13 +1,19 @@
-// import React from 'react';
-import BackBtn from 'components/backButton/BackBtn';
-import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { toast } from 'react-toastify';
+import { useEffect } from 'react';
+
 import { getUsers } from 'redux/users/operations';
-import { selectCurrentPage, selectError, selectUsers } from 'redux/users/selectors';
+import {
+  selectCurrentPage,
+  selectError,
+  selectUsers,
+} from 'redux/users/selectors';
 import { setPage } from 'redux/users/slice';
-import { Button } from 'styles/Button.styled';
+
+import { toast } from 'react-toastify';
+import BackBtn from 'components/backButton/BackBtn';
 import UsersList from '../components/usersList/UsersList';
+
+import { Button } from 'styles/Button.styled';
 
 const TweetsPage = () => {
   const users = useSelector(selectUsers);
@@ -36,11 +42,13 @@ const TweetsPage = () => {
       toast.error('Sorry, something went wrong');
     }
   }, [error]);
+
   return (
     <>
       <BackBtn />
+      
+      {users.length > 0 && <UsersList currentPageData={currentPageData} />}
 
-      <UsersList currentPageData={currentPageData} />
       {currentPage < totalPages && (
         <Button type="button" className="baseBtn" onClick={handleLoadMore}>
           load more

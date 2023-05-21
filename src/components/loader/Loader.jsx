@@ -1,7 +1,6 @@
 // import React from "react";
-import { Oval } from "react-loader-spinner";
-
-import { Overlay } from "./OverlayLoader";
+import { Oval } from 'react-loader-spinner';
+import { Overlay } from './OverlayLoader';
 
 const Loader = () => {
   return (

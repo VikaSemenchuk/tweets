@@ -1,8 +1,9 @@
 import PropTypes from 'prop-types';
 import UserCard from 'components/userCard/UserCard';
+
 import { StyledUsersList } from './UsersList.styled';
 
-const UsersList = ({currentPageData}) => {
+const UsersList = ({ currentPageData }) => {
   return (
     <>
       <StyledUsersList>
@@ -10,13 +11,12 @@ const UsersList = ({currentPageData}) => {
           <UserCard key={id} id={id} info={user} />
         ))}
       </StyledUsersList>
-      
     </>
   );
 };
 
 UsersList.propTypes = {
-  currentPageData: PropTypes.array.isRequired
+  currentPageData: PropTypes.array.isRequired,
 };
 
 export default UsersList;

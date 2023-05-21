@@ -1,13 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Avatar, CardBox, UserInfo } from './UserCard.styled';
-import { ReactComponent as Logo } from '../images/goit-logo.svg';
 import { useDispatch } from 'react-redux';
 import { updateUser } from 'redux/users/operations';
+
+import { ReactComponent as Logo } from '../images/goit-logo.svg';
+import { Avatar, CardBox, UserInfo } from './UserCard.styled';
 import { Button } from 'styles/Button.styled';
 
 const UserCard = ({ id, info }) => {
   const dispatch = useDispatch();
+
   const onClick = e => {
     if (e.target.id === id) {
       if (info.following) {
@@ -20,6 +22,7 @@ const UserCard = ({ id, info }) => {
       dispatch(updateUser({ ...info, id }));
     }
   };
+
   const { avatar, tweets, followers, following } = info;
 
   return (
@@ -31,10 +34,12 @@ const UserCard = ({ id, info }) => {
           <img src={avatar} alt="user-avatar" />
         </div>
       </Avatar>
+
       <UserInfo>
         <p>
           <span>{tweets}</span> Tweets
         </p>
+
         <p>
           <span>{new Intl.NumberFormat('en-US').format(followers)} </span>
           Followers

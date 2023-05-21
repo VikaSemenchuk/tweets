@@ -6,9 +6,7 @@ const tweetsAPI = axios.create({
 
 export const getUsersAPI = async () => {
     const response = await tweetsAPI.get();
-    // console.log('response :>> ', response);
     const {data} = response;
-    // console.log('data :>> ', data);
     return data;
 }
 
