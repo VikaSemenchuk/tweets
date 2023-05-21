@@ -3,8 +3,7 @@ import { getUsers, updateUser } from './operations';
 
 const initialState = {
   users: [],
-  followers: 'null',
-  following: false,
+  currentPage: 1,
   isLoading: false,
   error: null,
 };
@@ -13,21 +12,9 @@ const usersSlice = createSlice({
   name: 'users',
   initialState,
   reducers: {
-    // setUsers(state, action) {
-    //     state.users = action.payload;
-    // },
-    // setFollowers(state, action) {
-    //     state.followers = action.payload;
-    // },
-    // setFollowing(state, action) {
-    //     state.following = action.payload;
-    // },
-    // setIsLoading(state, action) {
-    //     state.isLoading = action.payload;
-    // },
-    // setError(state, action) {
-    //     state.error = action.payload;
-    // },
+    setPage: (state, action) => {
+        state.currentPage = action.payload;
+      },
   },
   extraReducers: builder =>
     builder
@@ -65,4 +52,5 @@ function onRejected(state, action) {
 export const { setUsers, setFollowers, setFollowing, setIsLoading, setError } =
   usersSlice.actions;
 
+  export const { setPage } = usersSlice.actions;
 export const usersReducer = usersSlice.reducer;

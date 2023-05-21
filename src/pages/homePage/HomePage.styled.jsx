@@ -7,10 +7,8 @@ export const MainPage = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin); //!!!!!!!!!!!!
-  color: white;
-  & p {
-    font-family: 'Montserrat';
+  & h1 {
+    /* font-family: 'Montserrat'; */
     font-weight: 600;
     font-size: 58px;
     line-height: 1.22;
@@ -19,7 +17,6 @@ export const MainPage = styled.div`
       color: #5cd3a8;
     }
   }
-  /* content: ''; */
 `;
 
 export const Hero = styled.div`
@@ -30,11 +27,8 @@ export const Hero = styled.div`
   background-image: url(${picture2});
   background-repeat: no-repeat;
   background-position: top;
-  /* background-size: cover; */
   text-align: center;
 
   width: 100%;
   height: 400px;
-
-  /* object-fit: fill; */
 `;

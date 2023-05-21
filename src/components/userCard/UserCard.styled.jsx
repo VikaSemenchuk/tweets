@@ -5,20 +5,14 @@ export const CardBox = styled.li`
   /* box-sizing: border-box; */
   width: 380px;
   padding: 28px 0 36px;
+  color: #ebd8ff;
+  text-transform: uppercase;
 
   position: relative;
   background: url(${picture}) 36px 28px no-repeat,
     linear-gradient(114.99deg, #471ca9 -0.99%, #5736a3 54.28%, #4b2a99 78.99%);
-  /* background-repeat: no-repeat; */
-  /* background-position: top; */
-  /* background-size: cover; */
   text-align: center;
-  /* background: linear-gradient(
-    114.99deg,
-    #471ca9 -0.99%,
-    #5736a3 54.28%,
-    #4b2a99 78.99%
-  ); */
+
   box-shadow: -2.5777px 6.87386px 20.6216px rgba(0, 0, 0, 0.23);
   border-radius: 20px;
   & > svg {
@@ -27,17 +21,6 @@ export const CardBox = styled.li`
     left: 20px;
   }
 `;
-
-// export const MainImage = styled.img`
-//   display: block;
-
-//   position: absolute;
-//   top: 28px;
-//   left: 36px;
-//   width: 308px;
-//   height: 168px;
-//   margin: 0 auto;
-// `;
 
 export const Avatar = styled.div`
   position: relative;
@@ -65,19 +48,9 @@ export const Avatar = styled.div`
     border-radius: 50%;
     overflow: hidden;
     border: 8px solid #ebd8ff;
-    box-shadow: 0px 3.43693px 3.43693px rgba(0, 0, 0, 0.06), inset 0px -1.71846px 3.43693px #AE7BE3, inset 0px 3.43693px 2.5777px #FBF8FF;
-    /* box-shadow: 0px 3.43693px 3.43693px rgba(0, 0, 0, 0.06), inset 0px -1.71846px 3.43693px #AE7BE3, inset 0px 3.43693px 2.5777px #FBF8FF; */
-    /* box-shadow: 0px 4.39163px 4.39163px rgba(0, 0, 0, 0.06), inset 0px -2.19582px 4.39163px #AE7BE3, inset 0px 4.39163px 3.29372px #FBF8FF; */
-/* border-radius: 13.1749px; */
-    /* box-shadow: 0px 4.39163px 4.39163px rgba(0, 0, 0, 0.06),
-      outset 0px -2.19582px 4.39163px #ae7be3,
-      outset 0px 4.39163px 3.29372px #fbf8ff; */
-    /* background: linear-gradient(
-      114.99deg,
-      #471ca9 -0.99%,
-      #5736a3 54.28%,
-      #4b2a99 78.99% */
-    );
+    box-shadow: 0px 3.43693px 3.43693px rgba(0, 0, 0, 0.06),
+      inset 0px -1.71846px 3.43693px #ae7be3,
+      inset 0px 3.43693px 2.5777px #fbf8ff;
     & > img {
       display: block;
       width: 62px;
@@ -87,15 +60,8 @@ export const Avatar = styled.div`
 `;
 
 export const UserInfo = styled.div`
-  /* text-align: center; */
   margin: 0 auto 26px;
   & > p {
-    /* font-family: 'Montserrat';
-    font-weight: 500;
-    font-size: 20px;
-    line-height: 1.2; */
-    text-transform: uppercase;
-    color: #ebd8ff;
     margin-top: 0;
     margin-bottom: 16px;
     &:last-child {
@@ -104,28 +70,4 @@ export const UserInfo = styled.div`
   }
 `;
 
-export const Button = styled.button`
-  /* display: block; */
-  /* cursor: pointer; */
-  width: 196px;
-  height: 50px;
-  margin: 0 auto;
-  /* text-align: center; */
-  background-color: ${e => (e.following === 'true' ? '#5CD3A8' : '#ebd8ff')};
-  /* box-shadow: 0px 3.43693px 3.43693px rgba(0, 0, 0, 0.25); */
-  /* border: none; */
-  /* border-radius: 10.3108px; */
-  /* font-family: 'Montserrat'; */
-  /* font-weight: 600;
-  font-size: 18px;
-  line-height: 1.22; */
-  /* color: #373737; */
-  /* text-transform: uppercase; */
-  /* transition: transform 250ms cubic-bezier(0.39, 0.575, 0.565, 1); */
-  /* &:hover,
-  :focus {
-    background-color: #b6f6b6;
-    transition: all 0.3s ease-in-out;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-  } */
-`;
+

@@ -8,10 +8,9 @@ const HomePage = () => {
 
   return (
     <MainPage>
-      {/* <p>Welcome to </p> */}
-      <p>
+      <h1>
         Welcome to the <span>Tweets App</span>
-      </p>
+      </h1>
       <Hero>
         <StyledLinkBtn className='baseBtn' to="tweets" state={{ from: location }}>
           Tweets

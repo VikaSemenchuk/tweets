@@ -8,4 +8,5 @@ export const StyledUsersList = styled.ul`
   align-items: center;
   flex-flow: wrap;
   gap: 30px;
+  margin-bottom: 30px;
 `;
