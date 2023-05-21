@@ -6,6 +6,7 @@ import {
   selectCurrentPage,
   selectError,
   selectUsers,
+  selectLoading,
 } from 'redux/users/selectors';
 import { setPage } from 'redux/users/slice';
 
@@ -14,9 +15,11 @@ import BackBtn from 'components/backButton/BackBtn';
 import UsersList from '../components/usersList/UsersList';
 
 import { Button } from 'styles/Button.styled';
+import Loader from 'components/loader/Loader';
 
 const TweetsPage = () => {
   const users = useSelector(selectUsers);
+  const isLoading = useSelector(selectLoading);
   const error = useSelector(selectError);
   const currentPage = useSelector(selectCurrentPage);
 
@@ -45,8 +48,9 @@ const TweetsPage = () => {
 
   return (
     <>
+      {isLoading && <Loader />}
       <BackBtn />
-      
+
       {users.length > 0 && <UsersList currentPageData={currentPageData} />}
 
       {currentPage < totalPages && (
