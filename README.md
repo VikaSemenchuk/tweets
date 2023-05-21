@@ -1,3 +1,43 @@
+# Tweets
+
+This project is designed for discovering interesting tweets that you can subscribe to.
+
+## Installation
+
+1. Clone the repository: `git clone https://github.com/VikaSemenchuk/tweets.git`
+2. Navigate to the project directory: `cd tweets`
+3. Install dependencies: `npm install`
+
+## Usage
+
+1. Start the project: `npm start`
+2. Open your browser and go to `http://localhost:3000`
+
+## Features
+
+Here you can find information about the activity and popularity of users, including their photos, the number of their tweets, and the number of followers they have. You can also follow to your favorite people by clicking the "follow" button, and we will save your selection. You can also stop following people by clicking the same button, which now appears slightly different and is called "Following". Additionally, we provide the ability to display users gradually using the "Load More" button so that you can have a more detailed look at all the users.
+
+## Project Structure
+
+The App consists of 2 pages: the homepage, where you see a greeting and a button "Tweets" that will take you to the page with a list of users.
+
+## Technologies
+
+The project was built using Create React App (CRA) (more information can be found below)
+also used:
+-reduxjs/toolkit
+-react-router-dom
+-axios
+-styled-components@latest
+-react-toastify
+-react-loader-spinner
+
+## Author
+
+- Victoria Semenchuk - [GitHub](https://github.com/VikaSemenchuk)
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
