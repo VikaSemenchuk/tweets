@@ -10,14 +10,14 @@ export const MainPage = styled.div`
   font-size: calc(10px + 2vmin);  //!!!!!!!!!!!!
   color: white;
   /* content: ''; */
+background-image: url(${picture2});
+background-repeat: no-repeat;
+background-position: center;
+/* background-size: cover; */
+text-align: center;
 `;
 
 export const Hero = styled.div`
-  background-image: url(${picture2});
-  background-repeat: no-repeat;
-  background-position: center;
-  /* background-size: cover; */
-  text-align: center;
   
   width: 100%;
   height: 400px;

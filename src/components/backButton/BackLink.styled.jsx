@@ -6,7 +6,7 @@ export const StyledLinkBtn = styled(Link)`
 
   max-width: 100%;
   height: 20px;
-  padding: 8px 16px;
+  padding: 12px 16px;
   margin: 30px 0;
   text-align: center;
   background-color: #ebd8ff;

@@ -98,7 +98,7 @@ export const Button = styled.button`
   height: 50px;
   margin: 0 auto;
   text-align: center;
-  background-color: ${p => (p.following ? '#5CD3A8' : '#ebd8ff')};
+  background-color: ${e => (e.following === 'true' ? '#5CD3A8' : '#ebd8ff')};
   box-shadow: 0px 3.43693px 3.43693px rgba(0, 0, 0, 0.25);
   border: none;
   border-radius: 10.3108px;
@@ -109,6 +109,7 @@ export const Button = styled.button`
   color: #373737;
   text-transform: uppercase;
   transition: transform 250ms cubic-bezier(0.39, 0.575, 0.565, 1);
+  }
 `;
 
 export const UserName = styled.div`

@@ -12,6 +12,8 @@ import picture from '../images/picture.svg';
 import { ReactComponent as Logo } from '../images/goit-logo.svg';
 
 const UserCard = ({ id, avatar, followers, tweets, following }) => {
+    // console.log('id :>> ', id);
+    // console.log('following :>> ', following);
   //   console.log('avatar :>> ', avatar);
   //   console.log('followers :>> ', followers);
   //   console.log('user :>> ', user);
@@ -21,8 +23,14 @@ const UserCard = ({ id, avatar, followers, tweets, following }) => {
 
 const onClick = e => {
     if (e.target.id === id) {
-        setOnFollowing(prev => !prev);
+
         onFollowing ? setFollower(prev => prev - 1) : setFollower(prev => prev + 1);
+        setOnFollowing(!onFollowing);
+        // if (onFollowing === true) {
+        //     setFollower(prev => prev - 1)
+        // } else {
+        //     setFollower(prev => prev + 1)
+        // }
     }
   };
 
@@ -46,7 +54,7 @@ const onClick = e => {
         </p>
       </UserInfo>
 
-      <Button type="button" onClick={onClick} following={onFollowing} id={id}>
+      <Button type="button" onClick={onClick} id={id} following={onFollowing ? 'true' : 'false'} >
         {onFollowing ? 'Following' : 'Follow'}
       </Button>
       {/* <UserName>{user}</UserName> */}
@@ -55,7 +63,7 @@ const onClick = e => {
 };
 
 UserCard.propTypes = {
-  id: PropTypes.number.isRequired,
+  id: PropTypes.string.isRequired,
   avatar: PropTypes.string.isRequired,
   user: PropTypes.string.isRequired,
   followers: PropTypes.number.isRequired,
