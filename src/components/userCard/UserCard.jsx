@@ -10,6 +10,7 @@ import {
 } from './UserCard.styled';
 import picture from '../images/picture.svg';
 import { ReactComponent as Logo } from '../images/goit-logo.svg';
+// import { useDispatch } from 'react-redux';
 
 const UserCard = ({ id, avatar, followers, tweets, following }) => {
     // console.log('id :>> ', id);
@@ -18,6 +19,9 @@ const UserCard = ({ id, avatar, followers, tweets, following }) => {
   //   console.log('followers :>> ', followers);
   //   console.log('user :>> ', user);
   //   console.log('tweets :>> ', tweets);
+//   const dispatch = useDispatch();
+
+
   const [follower, setFollower] = useState(followers);
   const [onFollowing, setOnFollowing] = useState(following);
 

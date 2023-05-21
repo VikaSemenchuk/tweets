@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   users: [],
-//   filter: '',
+  followers: 'null',
 };
 
 const usersSlice = createSlice({
@@ -12,12 +12,13 @@ const usersSlice = createSlice({
     setUsers(state, action) {
         state.users = action.payload;
     },
-    // setFilter(state, action) {
-    //     state.filter = action.payload;
-    // },
+    setFollowers(state, action) {
+        state.followers = action.payload;
+    },
   },
 });
 
-export const {setContacts} = usersSlice.actions;
+export const {setUsers, setFollowers} = usersSlice.actions;
 
 export const usersReducer = usersSlice.reducer;
+

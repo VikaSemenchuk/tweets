@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 export const StyledLinkBtn = styled(Link)`
   display: block;
 
-  max-width: 100%;
+  max-width: 300px;
   height: 20px;
   padding: 12px 16px;
   margin: 30px 0;

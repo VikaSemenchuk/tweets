@@ -8,11 +8,15 @@ const HomePage = () => {
 
   return (
     <MainPage>
-      <p>Welcome to </p>
-      <Hero></Hero>
-      <StyledLinkBtn to="tweets" state={{ from: location }}>
-        Tweets
-      </StyledLinkBtn>
+      {/* <p>Welcome to </p> */}
+        <p>
+          Welcome to the <span>Tweets App</span>
+        </p>
+      <Hero>
+        <StyledLinkBtn to="tweets" state={{ from: location }}>
+          Tweets
+        </StyledLinkBtn>
+      </Hero>
     </MainPage>
   );
 };
