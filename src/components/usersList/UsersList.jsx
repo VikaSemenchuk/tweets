@@ -33,8 +33,8 @@ const UsersList = () => {
     <>
       <BackBtn />
       <StyledUsersList>
-        {users.map(user => {
-          return <UserCard key={user.id} {...user} />;
+        {users.map(({id, ...user}) => {
+          return <UserCard key={id} id={id} info={user} />;
         })}
       </StyledUsersList>
     </>

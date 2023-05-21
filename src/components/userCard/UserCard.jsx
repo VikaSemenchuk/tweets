@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import {
   Avatar,
@@ -10,9 +10,12 @@ import {
 } from './UserCard.styled';
 import picture from '../images/picture.svg';
 import { ReactComponent as Logo } from '../images/goit-logo.svg';
+import { useDispatch } from 'react-redux';
+import { updateUser } from 'redux/operations';
 // import { useDispatch } from 'react-redux';
 
-const UserCard = ({ id, avatar, followers, tweets, following }) => {
+const UserCard = ({ id, info }) => {
+    // console.log('info :>> ', info);
     // console.log('id :>> ', id);
     // console.log('following :>> ', following);
   //   console.log('avatar :>> ', avatar);
@@ -20,23 +23,32 @@ const UserCard = ({ id, avatar, followers, tweets, following }) => {
   //   console.log('user :>> ', user);
   //   console.log('tweets :>> ', tweets);
 //   const dispatch = useDispatch();
+const dispatch = useDispatch();
 
 
-  const [follower, setFollower] = useState(followers);
-  const [onFollowing, setOnFollowing] = useState(following);
+//   const [follower, setFollower] = useState(followers);
+//   const [onFollowing, setOnFollowing] = useState(following);
 
 const onClick = e => {
     if (e.target.id === id) {
-
-        onFollowing ? setFollower(prev => prev - 1) : setFollower(prev => prev + 1);
-        setOnFollowing(!onFollowing);
+        if (info.following) {
+            info.following = false;
+            info.followers -= 1;
+          } else {
+            info.following = true;
+            info.followers += 1;
+          }
+        // following ? followers -= 1 : followers += 1;
+        // following === !following;
         // if (onFollowing === true) {
         //     setFollower(prev => prev - 1)
         // } else {
         //     setFollower(prev => prev + 1)
         // }
+        dispatch(updateUser({ ...info, id }));
     }
   };
+  const { avatar, tweets, followers, following } = info;
 
   return (
     <CardBox>
@@ -53,13 +65,13 @@ const onClick = e => {
           <span>{tweets}</span> Tweets
         </p>
         <p>
-          <span>{new Intl.NumberFormat('en-US').format(follower)} </span>
+          <span>{new Intl.NumberFormat('en-US').format(followers)} </span>
           Followers
         </p>
       </UserInfo>
 
-      <Button type="button" onClick={onClick} id={id} following={onFollowing ? 'true' : 'false'} >
-        {onFollowing ? 'Following' : 'Follow'}
+      <Button type="button" onClick={onClick} id={id} following={following ? 'true' : 'false'} >
+        {following ? 'Following' : 'Follow'}
       </Button>
       {/* <UserName>{user}</UserName> */}
     </CardBox>
@@ -68,11 +80,12 @@ const onClick = e => {
 
 UserCard.propTypes = {
   id: PropTypes.string.isRequired,
-  avatar: PropTypes.string.isRequired,
-  user: PropTypes.string.isRequired,
-  followers: PropTypes.number.isRequired,
-  tweets: PropTypes.number.isRequired,
-  following: PropTypes.bool.isRequired,
+  info: PropTypes.object.isRequired,
+//   avatar: PropTypes.string.isRequired,
+//   user: PropTypes.string.isRequired,
+//   followers: PropTypes.number.isRequired,
+//   tweets: PropTypes.number.isRequired,
+//   following: PropTypes.bool.isRequired,
 };
 
 export default UserCard;
