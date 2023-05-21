@@ -1,14 +1,14 @@
 import '../components/App.css';
 
 import { lazy } from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { Navigate, Route, Routes } from 'react-router-dom';
 import  Layout  from '../layout/layout/Layout';
 
 const LazyHomePage = lazy(() => import('../pages/homePage/HomePage'));
 const LazyTweetsPage = lazy(() => import('../pages/TweetsPage'));
-const LazyNotFoundPage = lazy(() =>
-  import('../pages/notFoundPage/NotFoundPage')
-);
+// const LazyNotFoundPage = lazy(() =>
+//   import('../pages/notFoundPage/NotFoundPage')
+// );
 
 function App() {
   return (
@@ -18,7 +18,7 @@ function App() {
         <Route index element={<LazyHomePage />} />
         <Route path="tweets" element={<LazyTweetsPage />} />
       </Route>
-      <Route path="*" element={<LazyNotFoundPage />} />
+      <Route path="*" element={<Navigate to="/"/>} />
     </Routes>
   
     // <div className="App">

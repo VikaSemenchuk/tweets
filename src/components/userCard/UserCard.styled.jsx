@@ -4,6 +4,7 @@ export const CardBox = styled.li`
   box-sizing: border-box;
   width: 380px;
   padding: 28px 0 36px;
+
   position: relative;
   background: linear-gradient(
     114.99deg,
@@ -22,6 +23,8 @@ export const CardBox = styled.li`
 
 export const MainImage = styled.img`
   display: block;
+  
+
   position: absolute;
   top: 28px;
   left: 36px;
@@ -109,6 +112,11 @@ export const Button = styled.button`
   color: #373737;
   text-transform: uppercase;
   transition: transform 250ms cubic-bezier(0.39, 0.575, 0.565, 1);
+  &:hover,
+  :focus {
+    background-color: #b6f6b6;
+    transition: all 0.3s ease-in-out;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   }
 `;
 
