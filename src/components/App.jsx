@@ -1,5 +1,3 @@
-import '../components/App.css';
-
 import { lazy } from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import Layout from '../layout/layout/Layout';

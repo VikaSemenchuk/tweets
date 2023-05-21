@@ -1,3 +1,4 @@
+import { Footer } from 'layout/footer/Footer';
 import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
 import Loader from '../../components/loader/Loader';
@@ -9,8 +10,6 @@ const Layout = () => {
   return (
     <>
       <ToastContainerEl />
-      {/* <Link to="/tweets">Tweets</Link> */}
-      {/* <Header /> */}
       <Suspense fallback={<Loader />}>
         <main>
           <Container>
@@ -18,6 +17,7 @@ const Layout = () => {
           </Container>
         </main>
       </Suspense>
+      <Footer />
     </>
   );
 };

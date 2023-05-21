@@ -7,7 +7,7 @@ const BackBtn = () => {
   const location = useLocation();
   return (
     <StyledLinkBtn className='baseBtn' to={location.state?.from ?? '/'}>
-      go back to home page
+      back
     </StyledLinkBtn>
   );
 };

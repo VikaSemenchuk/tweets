@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Avatar, CardBox, UserInfo } from './UserCard.styled';
 import { ReactComponent as Logo } from '../images/goit-logo.svg';
 import { useDispatch } from 'react-redux';
-import { updateUser } from 'redux/operations';
+import { updateUser } from 'redux/users/operations';
 import { Button } from 'styles/Button.styled';
 
 const UserCard = ({ id, info }) => {

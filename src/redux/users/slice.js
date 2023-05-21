@@ -13,8 +13,8 @@ const usersSlice = createSlice({
   initialState,
   reducers: {
     setPage: (state, action) => {
-        state.currentPage = action.payload;
-      },
+      state.currentPage = action.payload;
+    },
   },
   extraReducers: builder =>
     builder
@@ -52,5 +52,5 @@ function onRejected(state, action) {
 export const { setUsers, setFollowers, setFollowing, setIsLoading, setError } =
   usersSlice.actions;
 
-  export const { setPage } = usersSlice.actions;
+export const { setPage } = usersSlice.actions;
 export const usersReducer = usersSlice.reducer;
