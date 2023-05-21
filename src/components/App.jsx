@@ -2,7 +2,7 @@ import '../components/App.css';
 
 import { lazy } from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
-import  Layout  from '../layout/layout/Layout';
+import Layout from '../layout/layout/Layout';
 
 const LazyHomePage = lazy(() => import('../pages/homePage/HomePage'));
 const LazyTweetsPage = lazy(() => import('../pages/TweetsPage'));
@@ -12,15 +12,14 @@ const LazyTweetsPage = lazy(() => import('../pages/TweetsPage'));
 
 function App() {
   return (
-  
-      <Routes>
+    <Routes>
       <Route path="/" element={<Layout />}>
         <Route index element={<LazyHomePage />} />
         <Route path="tweets" element={<LazyTweetsPage />} />
       </Route>
-      <Route path="*" element={<Navigate to="/"/>} />
+      <Route path="*" element={<Navigate to="/" />} />
     </Routes>
-  
+
     // <div className="App">
     //   <header className="App-header">
     //     <img src={logo} className="App-logo" alt="logo" />

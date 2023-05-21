@@ -4,11 +4,11 @@ import {
   Avatar,
   Button,
   CardBox,
-  MainImage,
+//   MainImage,
   UserInfo,
 //   UserName,
 } from './UserCard.styled';
-import picture from '../images/picture.svg';
+// import picture from '../images/picture.svg';
 import { ReactComponent as Logo } from '../images/goit-logo.svg';
 import { useDispatch } from 'react-redux';
 import { updateUser } from 'redux/operations';
@@ -53,7 +53,7 @@ const onClick = e => {
   return (
     <CardBox>
       <Logo width={76} height={22} />
-      <MainImage src={picture} alt="main-img" />
+      {/* <MainImage src={picture} alt="main-img" /> */}
 
       <Avatar>
         <div>
@@ -70,7 +70,7 @@ const onClick = e => {
         </p>
       </UserInfo>
 
-      <Button type="button" onClick={onClick} id={id} following={following ? 'true' : 'false'} >
+      <Button type="button" className='baseBtn' onClick={onClick} id={id} following={following ? 'true' : 'false'} >
         {following ? 'Following' : 'Follow'}
       </Button>
       {/* <UserName>{user}</UserName> */}
