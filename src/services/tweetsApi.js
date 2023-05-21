@@ -1,8 +1,7 @@
 import axios from 'axios';
 
 const tweetsAPI = axios.create({
-    // baseURL: `https://646692002ea3cae8dc1a29d6.mockapi.io/api/v1/`,
-    baseURL: `${process.env.REACT_APP__API_DOMAIN}/v1/`,
+    baseURL: `https://646692002ea3cae8dc1a29d6.mockapi.io/api/v1/`,
 });
 
 export const APIUsers = async () => {
