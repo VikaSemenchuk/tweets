@@ -34,6 +34,9 @@ const TweetsPage = () => {
 
   const handleLoadMore = () => {
     dispatch(setPage(currentPage + 1));
+    setTimeout(() => {
+    window.scrollBy({ top: window.innerHeight / 2, behavior: 'smooth' });
+  }, 300);
   };
 
   useEffect(() => {

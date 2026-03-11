@@ -1,5 +1,15 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import picture from '../images/picture2.png';
+
+const fadeIn = keyframes`
+from { 
+    opacity: 0; 
+    transform: translateY(40px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }`;
 
 export const CardBox = styled.li`
   position: relative;
@@ -16,6 +26,8 @@ export const CardBox = styled.li`
 
   box-shadow: -2.5777px 6.87386px 20.6216px rgba(0, 0, 0, 0.23);
   border-radius: 20px;
+
+  animation: ${fadeIn} 0.3s ease;
 
   & > svg {
     position: absolute;
