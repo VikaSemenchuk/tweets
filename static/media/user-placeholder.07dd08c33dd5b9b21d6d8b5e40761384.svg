@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 63 63" fill="none">
+  <defs>
+    <linearGradient id="greenGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6dd63b"/>
+      <stop offset="100%" style="stop-color:#3cb820"/>
+    </linearGradient>
+  </defs>
+  <!-- зелене коло фон -->
+  <circle cx="31.5" cy="31.5" r="31.5" fill="url(#greenGradient)"/>
+  <!-- голова -->
+  <circle cx="31.5" cy="20" r="12" fill="white"/>
+  <!-- тіло -->
+  <path d="M8 60 C8 26 58 28 58 60" fill="white"/>
+</svg>
