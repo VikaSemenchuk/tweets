@@ -1,21 +1,17 @@
 import React from 'react';
 
 import PropTypes from 'prop-types';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { updateUser } from 'redux/users/operations';
-
-import { selectLoading } from 'redux/users/selectors';
 
 import { ReactComponent as Logo } from '../images/goit-logo.svg';
 
-import { AvatarWrapper, CardBox, UserInfo } from './UserCard.styled';
 import { Button } from 'styles/Button.styled';
-import Loader from 'components/loader/Loader';
+import { AvatarWrapper, CardBox, UserInfo } from './UserCard.styled';
+
 import Avatar from 'components/avatar/Avatar';
 
 const UserCard = ({ id, info }) => {
-  const isLoading = useSelector(selectLoading);
-
   const dispatch = useDispatch();
 
   const onClick = e => {
@@ -35,7 +31,6 @@ const UserCard = ({ id, info }) => {
 
   return (
     <>
-      {isLoading && <Loader />}
       <CardBox>
         <Logo width={76} height={22} />
 
