@@ -10,7 +10,8 @@ export const CardBox = styled.li`
   text-align: center;
 
   color: #ebd8ff;
-  background: url(${picture}) 36px 28px no-repeat,
+  background:
+    url(${picture}) 36px 28px no-repeat,
     linear-gradient(114.99deg, #471ca9 -0.99%, #5736a3 54.28%, #4b2a99 78.99%);
 
   box-shadow: -2.5777px 6.87386px 20.6216px rgba(0, 0, 0, 0.23);
@@ -23,7 +24,7 @@ export const CardBox = styled.li`
   }
 `;
 
-export const Avatar = styled.div`
+export const AvatarWrapper = styled.div`
   position: relative;
   margin-top: 150px;
   margin-bottom: 26px;
@@ -38,7 +39,8 @@ export const Avatar = styled.div`
     height: 8px;
 
     background-color: #ebd8ff;
-    box-shadow: 0px 3.43693px 3.43693px rgba(0, 0, 0, 0.06),
+    box-shadow:
+      0px 3.43693px 3.43693px rgba(0, 0, 0, 0.06),
       inset 0px -1.71846px 3.43693px #ae7be3,
       inset 0px 3.43693px 2.5777px #fbf8ff;
   }
@@ -47,6 +49,10 @@ export const Avatar = styled.div`
     z-index: 1;
     overflow: hidden;
 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     width: 80px;
     height: 80px;
 
@@ -54,14 +60,13 @@ export const Avatar = styled.div`
 
     border-radius: 50%;
     border: 8px solid #ebd8ff;
-    box-shadow: 0px 3.43693px 3.43693px rgba(0, 0, 0, 0.06),
+    box-shadow:
+      0px 3.43693px 3.43693px rgba(0, 0, 0, 0.06),
       inset 0px -1.71846px 3.43693px #ae7be3,
       inset 0px 3.43693px 2.5777px #fbf8ff;
     & > img {
-      display: block;
-      width: 63px;
-      height: 63px;
-      
+      width: 65px;
+      height: 65px;
     }
   }
 `;

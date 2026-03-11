@@ -1,4 +1,5 @@
 import React from 'react';
+
 import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
 import { updateUser } from 'redux/users/operations';
@@ -6,9 +7,11 @@ import { updateUser } from 'redux/users/operations';
 import { selectLoading } from 'redux/users/selectors';
 
 import { ReactComponent as Logo } from '../images/goit-logo.svg';
-import { Avatar, CardBox, UserInfo } from './UserCard.styled';
+
+import { AvatarWrapper, CardBox, UserInfo } from './UserCard.styled';
 import { Button } from 'styles/Button.styled';
 import Loader from 'components/loader/Loader';
+import Avatar from 'components/avatar/Avatar';
 
 const UserCard = ({ id, info }) => {
   const isLoading = useSelector(selectLoading);
@@ -28,7 +31,7 @@ const UserCard = ({ id, info }) => {
     }
   };
 
-  const { avatar, tweets, followers, following } = info;
+  const { avatar, tweets, followers, following, user } = info;
 
   return (
     <>
@@ -36,19 +39,20 @@ const UserCard = ({ id, info }) => {
       <CardBox>
         <Logo width={76} height={22} />
 
-        <Avatar>
-          <div>
-            <img src={avatar} alt="user-avatar" />
-          </div>
-        </Avatar>
+        <AvatarWrapper>
+          <Avatar src={avatar} />
+        </AvatarWrapper>
 
         <UserInfo>
+          <p style={{ fontWeight: 'bold', fontSize: '24px', color: '#b6f6b6' }}>
+            {user}
+          </p>
           <p>
             <span>{tweets}</span> Tweets
           </p>
 
           <p>
-            <span>{new Intl.NumberFormat('en-US').format(followers)} </span>
+            <span>{followers} </span>
             Followers
           </p>
         </UserInfo>

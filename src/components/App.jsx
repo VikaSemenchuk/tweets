@@ -7,7 +7,7 @@ const LazyTweetsPage = lazy(() => import('../pages/TweetsPage'));
 
 function App() {
   return (
-    <Routes>ß
+    <Routes>
       <Route path="/" element={<Layout />}>
         <Route index element={<LazyHomePage />} />
         <Route path="tweets" element={<LazyTweetsPage />} />
