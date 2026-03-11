@@ -13,7 +13,7 @@ const Loader = () => {
         wrapperClass=""
         visible={true}
         ariaLabel="oval-loading"
-        secondaryColor="#4fa94d"
+        secondaryColor="#0f480e"
         strokeWidth={2}
         strokeWidthSecondary={2}
       />
